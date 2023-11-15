@@ -5,9 +5,7 @@ const data_db = require('./.data_db.js');
 
 const { Sequelize, DataTypes } = require("sequelize");
 const { status } = require("express/lib/response");
-
-const bcrypt = require('bcrypt');
-
+console.log("data", data_db, data_db.username)
 const sequelize = new Sequelize(
   data_db.database,
   data_db.username,
