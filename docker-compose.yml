@@ -1,0 +1,24 @@
+version: "1"
+services:
+  mysql:
+    build: ./database/.
+    container_name: mysql-db
+    environment:
+      MYSQL_ROOT_HOST: "%"
+    ports:
+      - "3306:3306"
+    healthcheck:
+      test: [ "CMD", "mysql","--password=Azerty123", "--execute", "SHOW DATABASES;" ]
+      interval: 30s
+      timeout: 30s
+      retries: 5
+  server:
+    build: ./server/.
+    container_name: server-api
+    depends_on:
+      mysql:
+        condition: service_healthy
+    links:
+      - mysql
+    ports:
+     - 3000:3000
