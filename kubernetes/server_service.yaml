@@ -10,3 +10,27 @@ spec:
       port: 3000
       targetPort: 3000
   type: NodePort
+
+---
+
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: server
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - microservice-gateway
+  http:
+    - match:
+        - uri:
+            prefix: /api/
+      #        regex: '\/carservice\/*'
+      rewrite:
+        uri: /
+      route:
+        - destination:
+            port:
+              number: 3000
+            host: cust.default.svc.cluster.local
