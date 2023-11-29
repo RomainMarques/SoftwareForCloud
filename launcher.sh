@@ -17,3 +17,9 @@ cd ./kubernetes
 #minikube service mysql-deployment --url
 # Pour se connecter au serveur pour l'instant :
 #minikube service server --url
+
+#Step 5 :
+#minikube addons enable ingress
+#minikube tunnel
+#curl --resolve "www.example.com:3000:127.0.0.1" -i http://www.example.com
+
