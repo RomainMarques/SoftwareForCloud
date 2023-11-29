@@ -46,19 +46,19 @@ function SignIn(props) {
     return <React.Fragment>
         <form className="formCss" onSubmit={handleSubmit}>
             <label>
-                Prénom:
+                Prénom
             <input className="inputForm" type="text" name="firstName" />
             </label>
             <label>
-            Nom de Famille:
+            Nom de Famille
             <input className="inputForm" type="text" name="lastName"/>
             </label>
             <label>
-            Email:
+            Email
             <input className="inputForm" type="email" name="email"/>
             </label>
             <label>
-            Mot de passe:
+            Mot de passe
             <input className="inputForm" type="password" name="password"/>
             </label>
             <button className="submit" type="submit">S'inscrire</button>

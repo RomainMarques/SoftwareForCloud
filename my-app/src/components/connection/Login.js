@@ -43,11 +43,11 @@ function Login(props) {
         return <React.Fragment>
         <form className="formCss" onSubmit={handleSubmit}>
             <label>
-            Email:
+            Email
             <input className="inputForm" type="email" name="email"/>
             </label>
             <label>
-            Mot de passe:
+            Mot de passe
             <input className="inputForm" type="password" name="password"/>
             </label>
             <button className="submit" type="submit">Se connecter</button>
