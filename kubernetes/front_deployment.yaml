@@ -19,4 +19,4 @@ spec:
             - containerPort: 8100
           env:
             - name: REACT_APP_SERVER_PORT
-              value: 3000
+              value: "3000"

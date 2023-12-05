@@ -13,6 +13,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: server
+            name: front
             port:
-              number: 3000
+              number: 8100

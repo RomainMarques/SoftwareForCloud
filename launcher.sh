@@ -3,7 +3,8 @@ docker compose up -d
 
 # Step 2 : Tag the images created and then push it, ex :
 #docker tag 336e8f7ed40e azarel9/softwareforcloud-server:0.1
-#docker tag azarel9/softwareforcloud-mysql:0.1
+#docker tag 336e8f7ed40e azarel9/softwareforcloud-mysql:0.1
+#docker tag azarel9/front-app:0.1
 
 # Step 3 : Push the images, ex :
 #docker push azarel9/softwareforcloud-mysql:0.1
