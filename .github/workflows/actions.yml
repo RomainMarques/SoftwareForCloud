@@ -12,9 +12,12 @@ jobs:
       - name: Try the Kubernetes cluster
         run: kubectl get pods -A
       - name: Deploy the images to minikube
-        run:
-          cd kubernetes
-          kubectl apply -f database_deployment.yaml && kubectl apply -f database_service.yaml && server_deployment.yaml && server_service.yaml
+        run: |
+          cd ./kubernetes
+          kubectl apply -f database_deployment.yaml && \
+          kubectl apply -f database_service.yaml && \
+          kubectl server_deployment.yaml && \
+          kubectl server_service.yaml
       - name: Get Kubernetes service URL
         run: |
           kubectl get pods
