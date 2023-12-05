@@ -18,9 +18,7 @@ jobs:
           ls -la
           cd kubernetes
           kubectl apply -f database_deployment.yaml && \
-          kubectl apply -f database_service.yaml && \
-          kubectl server_deployment.yaml && \
-          kubectl server_service.yaml
+          kubectl apply -f database_service.yaml
       - name: Get Kubernetes service URL
         run: |
           kubectl get pods
