@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const bcrypt = require("bcrypt");
 
 const { Sequelize, DataTypes } = require("sequelize");
 const { status } = require("express/lib/response");
