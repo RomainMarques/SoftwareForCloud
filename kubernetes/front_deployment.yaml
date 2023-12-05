@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: front
+  template:
+    metadata:
+      labels:
+        app: front
+    spec:
+      containers:
+        - name: front
+          image: azarel9/front-app:0.1
+          ports:
+            - containerPort: 8100
+          env:
+            - name: REACT_APP_SERVER_PORT
+              value: 3000
