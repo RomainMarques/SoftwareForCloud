@@ -23,7 +23,7 @@ jobs:
       - name: Get Kubernetes service URL
         run: |
           kubectl get pods
-          minikube service list
+          kubectl get svc
           minikube service server --url
           echo "------------------opening the service------------------"
       - name: Test Kubernetes service URL
