@@ -2,7 +2,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 5%;
-    height: 100vh;
-    width: 100%;
+    margin-top: 7rem;
+    background-color: rgb(236, 194, 140);
+    box-shadow: 0 0 1rem rgba(237, 200, 151, 0.7);
+    padding: 0rem 1.5rem 1.5rem 1.5rem;
+    border-radius: .2rem;
+    height: fit-content;
 }

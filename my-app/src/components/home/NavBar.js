@@ -21,36 +21,36 @@ class NavBar extends Component {
         }
         return <div className="navbar">
             <div className="logoApp">
-                <Link to="/home">
+                <Link className="linkTo" to="/home">
                     Accueil
                 </Link>
             </div>
             <div className="searchIcon">
-                <Link to="/search">
+                <Link className="linkTo" to="/search">
                     Rechercher
                 </Link>
             </div>
             <div className="reccoIcon">
-                <Link to="/reccomandation">
+                <Link className="linkTo" to="/reccomandation">
                     Recommandations
                 </Link>
             </div>
             <div className="position">
-                <Link to={"/position"}>
+                <Link className="linkTo" to={"/position"}>
                     Boîtes à livres
                 </Link>
             </div>
             <div className="pastIcon">
-                <Link to="/historic">
+                <Link className="linkTo" to="/historic">
                     Bibliothèque
                 </Link>
             </div>
             <div className="userIcon">
-                <Link to="/user">
+                <Link className="linkTo" to="/user">
                     Mon compte
                 </Link>
             </div>
-            <div className="exitIcon" onClick={() => {
+            <div className="linkTo" onClick={() => {
                 localStorage.setItem("email", "");
                 window.location.href = "/"}
             }>

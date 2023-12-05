@@ -20,7 +20,7 @@ function SignIn(props) {
     }
     function handleSubmit(event) {
         event.preventDefault()
-        axios.post("http://localhost:8100/api/signin", 
+        axios.post(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/api/signin`, 
             {firstname: event.target.elements.firstName.value,
                 lastname: event.target.elements.lastName.value,
                 email: event.target.elements.email.value,
@@ -36,7 +36,8 @@ function SignIn(props) {
                 }, 3000)
             }
         })
-        .catch((res) => {
+        .catch((err) => {
+            console.log(err)
             setWrongEmail(true)
             setTimeout(() => {
                 setWrongEmail(false)
@@ -46,19 +47,19 @@ function SignIn(props) {
     return <React.Fragment>
         <form className="formCss" onSubmit={handleSubmit}>
             <label>
-                Prénom:
+                Prénom
             <input className="inputForm" type="text" name="firstName" />
             </label>
             <label>
-            Nom de Famille:
+            Nom de Famille
             <input className="inputForm" type="text" name="lastName"/>
             </label>
             <label>
-            Email:
+            Email
             <input className="inputForm" type="email" name="email"/>
             </label>
             <label>
-            Mot de passe:
+            Mot de passe
             <input className="inputForm" type="password" name="password"/>
             </label>
             <button className="submit" type="submit">S'inscrire</button>

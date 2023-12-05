@@ -16,7 +16,7 @@
     align-items: center;
     text-align: center;
     font-size: 600%;
-    color: blueviolet;
+    color: rgb(242, 140, 70);
 }
 
 .camera > * {
@@ -144,8 +144,13 @@
 .homePage {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100%;
   align-items: center;
-  margin-top: 2%;
+  margin-top: auto;
+  margin-bottom: auto;
+  width: fit-content;
+  height: fit-content;
+  background-color: rgb(236, 194, 140);
+  padding: 2rem;
+  border-radius: .2rem;
+  box-shadow: 0 0 1rem rgba(237, 200, 151, 0.7);
 }

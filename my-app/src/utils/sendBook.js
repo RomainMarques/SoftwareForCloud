@@ -11,7 +11,7 @@ export function getBookGoogle(title) {
 }
 
 export function addBook(title, owner, author, year, type, publisher) {
-    axios.post("http://localhost:8100/api/addbook", {
+    axios.post(`http://localhost:${process.env.SERVER_PORT}/api/addbook`, {
         title: title,
         owner: owner,
         author: author,
@@ -28,7 +28,7 @@ export function addBook(title, owner, author, year, type, publisher) {
 }
 
 export function noteBook(title, owner, note) {
-    axios.post("http://localhost:8100/api/notebook", {
+    axios.post(`http://localhost:${process.env.SERVER_PORT}/api/notebook`, {
         title: title,
         owner: owner,
         note: note
@@ -42,7 +42,7 @@ export function noteBook(title, owner, note) {
 }
 
 export function addBookReccomandation(title, owner, author, year, type, publisher) {
-    axios.post("http://localhost:8100/api/addreccobook", {
+    axios.post(`http://localhost:${process.env.SERVER_PORT}/api/addreccobook>`, {
         title: title,
         owner: owner,
         author: author,
@@ -59,7 +59,7 @@ export function addBookReccomandation(title, owner, author, year, type, publishe
 }
 
 export function getReccomandationBook(owner) {
-    axios.post("http://localhost:8000", {email: owner})
+    axios.post(`http://localhost:${process.env.SERVER_PORT}`, {email: owner})
         .then((value) => {
             const listOfBooks = value.data.split("-")
             for(let i in listOfBooks) {

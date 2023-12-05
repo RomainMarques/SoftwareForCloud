@@ -1,21 +1,31 @@
+body {
+  background-image: url('../../assets/images/library.jpg');
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 .accueil {
     display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
-    margin-top: 2%;
+    margin: auto;
+    background-color: rgb(236, 194, 140);
+    border-radius: 1rem;
+    padding: 1rem;
+    box-shadow: 0 0 1rem rgba(237, 200, 151, 0.7);
 }
 
 .buttonContainer {
-  border-bottom: 1px solid #0077cc;
+  border-bottom: 1px solid rgb(242, 140, 70);
 }
 
 .buttonAccueil {
   display: inline-block;
   padding: 10px 20px;
   border-radius: 5px;
-  border: 2px solid #0077cc;
-  color: #0077cc;
+  border: 2px solid rgb(242, 140, 70);
+  color: rgb(242, 140, 70);
   font-size: 16px;
   font-weight: bold;
   text-align: center;
@@ -25,7 +35,7 @@
 }
   
 .buttonAccueil:hover {
-  background-color: #0077cc;
+  background-color: rgb(242, 140, 70);
   color: #fff;
 }
 
