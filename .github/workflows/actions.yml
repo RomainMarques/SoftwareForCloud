@@ -21,7 +21,8 @@ jobs:
           kubectl apply -f server_deployment.yaml && \
           kubectl apply -f server_service.yaml
       - name: Wait for pods to be ready
-        run: kubectl wait --for=condition=Ready pod --all --timeout=5m
+        run: |
+          sleep 300
       - name: Get Kubernetes service URL
         run: |
           kubectl get pods

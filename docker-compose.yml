@@ -22,3 +22,8 @@ services:
       - mysql
     ports:
      - 3000:3000
+  front:
+    build: ./my-app
+    container_name: front-app
+    ports:
+      - 8100:8100
