@@ -13,6 +13,8 @@ jobs:
         run: kubectl get pods -A
       - name: Deploy the images to minikube
         run: |
+          ls
+          pwd
           cd kubernetes
           kubectl apply -f database_deployment.yaml && \
           kubectl apply -f database_service.yaml && \
