@@ -1,9 +1,14 @@
 .historicPage {
   display: flex;
   flex-direction: column;
-  width: 100%;
   align-items: center;
-    margin-top: 6%;
+  margin-top: 7rem;
+    background-color: rgb(236, 194, 140);
+    box-shadow: 0 0 1rem rgba(237, 200, 151, 0.7);
+    padding: .7rem 1.5rem 1.5rem 1.5rem;
+    border-radius: .2rem;
+    width: 80%;
+    height: fit-content;
 }
 
 .titreHistoricPage {

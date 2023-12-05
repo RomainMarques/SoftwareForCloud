@@ -1,10 +1,14 @@
 .searchPage {
     display: flex;
-  flex-direction: column;
-  height: 100vh;
-  width: 100%;
-  align-items: center;
-    margin-top: 5%;
+    flex-direction: column;
+    align-items: center;
+    height: fit-content;
+    margin-top: 7rem;
+    background-color: rgb(236, 194, 140);
+    box-shadow: 0 0 1rem rgba(237, 200, 151, 0.7);
+    padding: .7rem 1.5rem 1.5rem 1.5rem;
+    border-radius: .2rem;
+    width: 80%;
 }
 
 .searchFile { // contient le bouton pour rechercher un fichier et la recherche dans searchResults
@@ -23,13 +27,16 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    margin-left: 0;
 
     .card { // la carte / l'oeuvre
-        margin: 1%;
+        padding: 1rem;
         border: 1px solid black;
         display: flex;
         flex-direction: column;
         align-items: center;
+        border-radius: .2rem;
+        background-color: rgb(229, 198, 158);
 
         .card-header { // contient l'image et le titre de la carte
             
