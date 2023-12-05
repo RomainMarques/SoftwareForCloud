@@ -7,6 +7,8 @@ jobs:
     runs-on: ubuntu-latest
     name: build and deploy to minikube
     steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
       - name: Start Kubernetes minikube
         uses: medyagh/setup-minikube@master
       - name: Try the Kubernetes cluster
