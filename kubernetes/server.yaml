@@ -1,0 +1,64 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: server
+  template:
+    metadata:
+      labels:
+        app: server
+    spec:
+      containers:
+        - name: server
+          image: azarel9/softwareforcloud-server:0.1
+          ports:
+            - containerPort: 3000
+          env: # Setting Enviornmental Variables
+            - name: DB_HOST   # Setting Database host address from configMap
+              value: mysql
+            - name : DB_NAME
+              value: cloud_projet
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: server
+spec:
+  selector:
+    app: server
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000
+      name: http
+  type: NodePort
+status:
+  loadBalancer: {}
+
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: server
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - microservice-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /server/
+    rewrite:
+      uri: /api/
+    route:
+    - destination:
+        port:
+          number: 80
+        host: server.default.svc.cluster.local

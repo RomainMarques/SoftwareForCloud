@@ -11,10 +11,8 @@ docker compose up -d
 
 # Step 4, se placer dans le dossier kubernetes :
 cd ./kubernetes
-#kubectl apply -f database_deployment.yaml
-#kubectl apply -f database_service.yaml
-#kubectl apply -f server_deployment.yaml
-#kubectl apply -f server_service.yaml
+#kubectl apply -f database.yaml
+#kubectl apply -f server.yaml
 #minikube service mysql-deployment --url
 # Pour se connecter au serveur pour l'instant :
 #minikube service server --url

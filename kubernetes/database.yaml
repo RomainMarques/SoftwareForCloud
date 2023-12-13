@@ -18,3 +18,18 @@ spec:
           ports:
             - containerPort: 3306
               name: mysql-db
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: mysql-db
+spec:
+  selector:
+    app: mysql-db
+  ports:
+    - protocol: TCP
+      port: 3306
+      targetPort: 3306
+  type: NodePort
