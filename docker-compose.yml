@@ -2,7 +2,8 @@ version: "1"
 services:
   mysql:
     build: ./database/.
-    container_name: mysql-db
+    container_name: mysql_db
+    image: mysql-db
     environment:
       MYSQL_ROOT_HOST: "%"
     ports:
@@ -15,6 +16,7 @@ services:
   server:
     build: ./server/.
     container_name: server-api
+    image: server
     depends_on:
       mysql:
         condition: service_healthy
@@ -25,5 +27,12 @@ services:
   front:
     build: ./my-app
     container_name: front-app
+    image: front
     ports:
       - 8100:8100
+  image_process:
+    build: ./ImageProcessingService
+    container_name: image_process
+    image: image_process
+    ports:
+      - 3380:911
