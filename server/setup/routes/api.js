@@ -5,12 +5,12 @@ const bcrypt = require("bcrypt");
 const { Sequelize, DataTypes } = require("sequelize");
 const { status } = require("express/lib/response");
 const sequelize = new Sequelize(
-  "projet_cloud",
+  "db_master_project",
   "root",
   "Azerty123",
   {
     dialect: "mysql",
-    host: "mysql-db",
+    host: "localhost",
     port: "3306"
   }
 );
@@ -301,5 +301,18 @@ router.post("/deletebookboite", async (req, res) => {
     console.log(err)
   }
 })
+
+router.post("/getbookswithscore", async (req, res) => {
+  const { email, rating } = req.body
+  try {
+    const books = await sequelize.query(`select * from book where owner='${email}' and rating>='${rating}'`)
+    console.log("books" + books[0] + books)
+    res.status(200).json(books[0])
+  } catch (err){
+    console.log(err)
+  }
+})
+
+
 
 module.exports = router;
