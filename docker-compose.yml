@@ -36,3 +36,9 @@ services:
     image: image_process
     ports:
       - 3380:911
+  recommendations:
+    build: ./recommendation
+    container_name: recommendation
+    image: recommendation
+    ports:
+      - 8000:8000

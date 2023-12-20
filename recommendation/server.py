@@ -34,7 +34,7 @@ class RequestHandler(SimpleHTTPRequestHandler):
 
 # Set up the server
 def run_server():
-    host = 'localhost'
+    host = '0.0.0.0'
     port = 8000
     server_address = (host, port)
     httpd = HTTPServer(server_address, RequestHandler)
