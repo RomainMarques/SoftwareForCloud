@@ -16,9 +16,7 @@ jobs:
       - name: Deploy the images to minikube
         run: |
           cd kubernetes
-          kubectl apply -f gateway.yaml && \
-          kubectl apply -f database.yaml && \
-          kubectl apply -f server.yaml
+          kubectl apply -f database.yaml
       - name: Wait for the database to be ready
         run: kubectl rollout status deployment/mysql-db --timeout=300s
       #- name: Get Kubernetes service URL
