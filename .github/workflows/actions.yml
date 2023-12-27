@@ -16,25 +16,22 @@ jobs:
       - name: Deploy the images to minikube
         run: |
           cd kubernetes
-          kubectl apply -f database_deployment.yaml && \
-          kubectl apply -f database_service.yaml && \
-          kubectl apply -f server_deployment.yaml && \
-          kubectl apply -f server_service.yaml
-      - name: Wait for pods to be ready
-        run: |
-          sleep 300
-      - name: Get Kubernetes service URL
-        run: |
-          kubectl get pods
-          kubectl get svc
-          minikube service server --url
-          echo "------------------opening the service------------------"
-      - name: Test Kubernetes service URL
-        uses: nick-fields/retry@v2
-        with:
-          timeout_seconds: 10
-          max_attempts: 4
-          command: curl $(minikube service server --url)/api/api/getuser/c@c
-      - name: Log Kubernetes pods
-        run: |
-          kubectl logs $(kubectl get pods -l app=server -o name)
+          kubectl apply -f database.yaml && \
+          kubectl apply -f server.yaml
+      - name: Wait for the database to be ready
+        run: kubectl rollout status deployment/mysql-db --timeout=300s
+      #- name: Get Kubernetes service URL
+      #  run: |
+      #    kubectl get pods
+      #    kubectl get svc
+      #    minikube service server --url
+      #    echo "------------------opening the service------------------"
+      #- name: Test Kubernetes service URL
+      #  uses: nick-fields/retry@v2
+      #  with:
+      #    timeout_seconds: 10
+      #    max_attempts: 4
+      #    command: curl $(minikube service server --url)/api/api/getuser/c@c
+      #- name: Log Kubernetes pods
+      #  run: |
+      #    kubectl logs $(kubectl get pods -l app=server -o name)
