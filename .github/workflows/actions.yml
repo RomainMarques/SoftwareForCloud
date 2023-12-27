@@ -19,6 +19,9 @@ jobs:
           kubectl apply -f database.yaml
       - name: Wait for the database to be ready
         run: kubectl rollout status deployment/mysql-db --timeout=300s
+        continue-on-error: true
+      - name: Checking
+        run: kubectl get deployments && kubectl get pods && kubectl get services
       #- name: Get Kubernetes service URL
       #  run: |
       #    kubectl get pods
