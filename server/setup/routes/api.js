@@ -5,8 +5,8 @@ const bcrypt = require("bcrypt");
 const { Sequelize, DataTypes } = require("sequelize");
 const { status } = require("express/lib/response");
 const sequelize = new Sequelize(
-  "db_master_project",
   "projet_cloud",
+  "root",
   "Azerty123",
   {
     dialect: "mysql",
@@ -51,7 +51,6 @@ router.post("/login", async (req, res) => {
 
   if (user[0].length === 0) {
     res.status(400).json({ message: "User not found" });
-    return
   } else {
     const validPassword = await bcrypt.compare(password, user[0][0].password);
     if (validPassword) {

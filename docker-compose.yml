@@ -2,7 +2,7 @@ version: "1"
 services:
   mysql:
     build: ./database/.
-    container_name: mysql_db
+    container_name: mysql-db
     image: mysql-db
     environment:
       MYSQL_ROOT_HOST: "%"

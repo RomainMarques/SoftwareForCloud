@@ -59,7 +59,7 @@ export function addBookReccomandation(title, owner, author, year, type, publishe
 }
 
 export function getReccomandationBook(owner) {
-    axios.post(`http://localhost:${process.env.SERVER_PORT}`, {email: owner})
+    axios.post(`http://localhost:${process.env.SERVER_PORT}/recommendations/`, {email: owner})
         .then((value) => {
             const listOfBooks = value.data.split("-")
             for(let i in listOfBooks) {

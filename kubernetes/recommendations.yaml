@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: recommendations
-          image: azarel9/recommendations:0.6
+          image: azarel9/recommendations:0.7
           ports:
             - containerPort: 8000
 
@@ -57,3 +57,14 @@ spec:
         port:
           number: 8976
         host: recommendations.default.svc.cluster.local
+    corsPolicy:
+      allowOrigin:
+        - "*"
+      allowMethods:
+        - "POST"
+        - "GET"
+        - "PUT"
+      allowHeaders:
+        - "content-type"
+        - "authorization"
+      maxAge: "86400s"

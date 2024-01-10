@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: azarel9/softwareforcloud-server:0.1
+          image: azarel9/softwareforcloud-server:0.3
           ports:
             - containerPort: 3000
           env: # Setting Enviornmental Variables
@@ -64,7 +64,7 @@ spec:
         host: server.default.svc.cluster.local
     corsPolicy:
       allowOrigin:
-        - "http://localhost:8100"
+        - "*"
       allowMethods:
         - "POST"
         - "GET"
