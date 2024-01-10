@@ -11,7 +11,7 @@ export function getBookGoogle(title) {
 }
 
 export function addBook(title, owner, author, year, type, publisher) {
-    axios.post(`http://localhost:${process.env.SERVER_PORT}/api/addbook`, {
+    axios.post(`http://localhost:${process.env.SERVER_PORT}/server/addbook`, {
         title: title,
         owner: owner,
         author: author,
@@ -28,7 +28,7 @@ export function addBook(title, owner, author, year, type, publisher) {
 }
 
 export function noteBook(title, owner, note) {
-    axios.post(`http://localhost:${process.env.SERVER_PORT}/api/notebook`, {
+    axios.post(`http://localhost:${process.env.SERVER_PORT}/server/notebook`, {
         title: title,
         owner: owner,
         note: note
@@ -42,7 +42,7 @@ export function noteBook(title, owner, note) {
 }
 
 export function addBookReccomandation(title, owner, author, year, type, publisher) {
-    axios.post(`http://localhost:${process.env.SERVER_PORT}/api/addreccobook>`, {
+    axios.post(`http://localhost:${process.env.SERVER_PORT}/server/addreccobook>`, {
         title: title,
         owner: owner,
         author: author,

@@ -15,7 +15,7 @@ class UserPage extends Component {
         this.state = {user: {}, newuser: {password:"",firstname:"",lastname:""}, message: ""}
     }
     getUserInfos() { // récupérer les infos de l'utilisateur
-        axios.get("http://localhost:8100/api/getuser/" + localStorage.getItem("email"))
+        axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/server/getuser/` + localStorage.getItem("email"))
         .then((res) => {
             this.setState({user: res.data})
         })
@@ -36,7 +36,7 @@ class UserPage extends Component {
             this.setState({message: "Aucun changement n'a été effectué"})
             return
         }
-        axios.put("http://localhost:8100/api/updateuser/" + localStorage.getItem("email"), this.state.newuser)
+        axios.put(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/server/updateuser/` + localStorage.getItem("email"), this.state.newuser)
         .then((res) => {
             this.setState({message: res.data.message})
             // give this.state.newuser.firstname if it's not null, else give this.state.user.firstname, same for lastname
@@ -48,7 +48,7 @@ class UserPage extends Component {
         })
     }
     deleteUser() { // supprimer l'utilisateur
-        axios.delete("http://localhost:8100/api/deleteuser/" + localStorage.getItem("email"))
+        axios.delete(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/server/deleteuser/` + localStorage.getItem("email"))
         .then((res) => {
             localStorage.setItem("email", "")
             window.location.href = "/"

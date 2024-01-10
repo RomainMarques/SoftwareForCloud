@@ -6,11 +6,11 @@ const { Sequelize, DataTypes } = require("sequelize");
 const { status } = require("express/lib/response");
 const sequelize = new Sequelize(
   "db_master_project",
-  "root",
+  "projet_cloud",
   "Azerty123",
   {
     dialect: "mysql",
-    host: "localhost",
+    host: "mysql-db",
     port: "3306"
   }
 );

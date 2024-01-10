@@ -62,3 +62,14 @@ spec:
         port:
           number: 80
         host: server.default.svc.cluster.local
+    corsPolicy:
+      allowOrigin:
+        - "http://localhost:8100"
+      allowMethods:
+        - "POST"
+        - "GET"
+        - "PUT"
+      allowHeaders:
+        - "content-type"
+        - "authorization"
+      maxAge: "86400s"

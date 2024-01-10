@@ -17,7 +17,7 @@ class ReccoPage extends Component {
     }
 
     getBooksReccomended() {
-        axios.get("http://localhost:8100/api/getreccobooksfromowner/" + localStorage.getItem("email"))
+        axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/server/getreccobooksfromowner/` + localStorage.getItem("email"))
         .then((res) => {
             let bookList = []
             for (let i in res.data) {

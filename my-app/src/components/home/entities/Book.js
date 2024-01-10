@@ -19,7 +19,7 @@ class Book extends Component {
         this.stars = React.createRef()
     }
     deleteBook() {
-        axios.post("http://localhost:8100/api/deletebook", {owner: localStorage.getItem("email"), title: this.props.title})
+        axios.post(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/server/deletebook`, {owner: localStorage.getItem("email"), title: this.props.title})
         .then((res) => {
             this.props.whenDelete()
         }).catch((err) => {
@@ -28,7 +28,7 @@ class Book extends Component {
     }
     addBookFromRecco() {
         addBook(this.props.title, localStorage.getItem("email"), this.props.author, this.props.year, this.props.type, this.props.publisher)
-        axios.post("http://localhost:8100/api/deleterecco", {
+        axios.post(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/server/deleterecco`, {
             email: localStorage.getItem("email"),
             title: this.props.title
         }).then((res) => {

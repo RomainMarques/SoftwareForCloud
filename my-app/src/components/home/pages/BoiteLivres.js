@@ -11,7 +11,7 @@ class BoiteLivres extends Component {
         this.state = {gare: localStorage.getItem("gare"), books : [], addPhoto : false};
     }
     componentDidMount() {
-        axios.get(`http://localhost:8100/api/getBooksBoites/${this.state.gare}`).then(res => {
+        axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/server/getBooksBoites/${this.state.gare}`).then(res => {
             this.setState({books: res.data})
         }).catch(err => {
             console.log(err)

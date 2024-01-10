@@ -24,7 +24,7 @@ class HistoricPage extends Component {
         this.getBooksOwner()
     }
     getBooksOwner() {
-        axios.get("http://localhost:8100/api/getbooksfromowner/" + this.state.getEmail)
+        axios.get(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/server/getbooksfromowner/` + this.state.getEmail)
         .then((res) => {
             let bookList = []
             for (let i in res.data) {

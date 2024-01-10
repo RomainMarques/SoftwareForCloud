@@ -30,12 +30,6 @@ services:
     image: front
     ports:
       - 8100:8100
-  image_process:
-    build: ./ImageProcessingService
-    container_name: image_process
-    image: image_process
-    ports:
-      - 3380:911
   recommendations:
     build: ./recommendation
     container_name: recommendation
