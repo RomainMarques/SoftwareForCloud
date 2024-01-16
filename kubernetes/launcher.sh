@@ -18,3 +18,5 @@ bash ./ingress-forward.sh &
 sleep 1
 echo To access the website you can go on the following url :
 minikube service front --url
+
+kubectl get pods

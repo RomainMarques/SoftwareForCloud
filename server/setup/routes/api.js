@@ -27,7 +27,7 @@ router.use((req, res, next) => {
   next();
 });
 
-const Book = sequelize.define('Book', {
+const Book = sequelize.define('book', {
   title: DataTypes.STRING,
   owner: DataTypes.STRING,
   author: DataTypes.STRING,
@@ -84,7 +84,7 @@ router.post("/signin", async(req, res) => {
 router.post("/addbook", async (req, res) => {
   const { title, owner, author, year, type, publisher} = req.body;
   try {
-    const checkBook = await sequelize.query(`Select * From Book where owner='${owner}' and title='${title}'`);
+    const checkBook = await sequelize.query(`Select * From book where owner='${owner}' and title='${title}'`);
     if(checkBook[0].length !== 0) {
       await sequelize.query(`update book set nbBooks='${checkBook[0][0].nbBooks + 1}' where owner='${owner}' and title='${title}'`);
     } else {
@@ -125,7 +125,7 @@ router.post("/notebook", async (req, res) => {
   const { title, owner, note } = req.body;
   try {
     console.log(title, owner, note)
-    const checkBook = await sequelize.query(`Select * From Book where owner='${owner}' and title='${title}'`);
+    const checkBook = await sequelize.query(`Select * From book where owner='${owner}' and title='${title}'`);
     if(checkBook[0].length === 0) {
       res.status(404).json({message: "No book found"})
       return
