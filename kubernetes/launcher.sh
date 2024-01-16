@@ -14,6 +14,12 @@ kubectl apply -f ./front.yaml
 
 bash ./ingress-forward.sh &
 
+# Wait for the front-end service to be ready
+while ! kubectl get pods -l app=front | grep "Running"; do
+    echo "Waiting for the front-end service to be ready..."
+    sleep 5
+done
+
 # Wait for the ingress to be ready
 sleep 1
 echo To access the website you can go on the following url :
