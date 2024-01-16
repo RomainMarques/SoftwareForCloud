@@ -27,6 +27,7 @@ class Start extends Component {
     }
     render() {
         return <React.Fragment>
+            {console.log(process.env.REACT_APP_SERVER_PORT)}
             {this.connexion()}
         </React.Fragment>
     }

@@ -20,7 +20,7 @@ function Login(props) {
     }
     function handleSubmit(event) {
         event.preventDefault()
-        axios.post(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/server/login`,
+        axios.post(`http://localhost:3000/server/login`,
             {email: event.target.elements.email.value, password: event.target.elements.password.value})
         .then((res) => {
             if(res.status === 200) {

@@ -77,8 +77,10 @@ class Home extends Component {
                         </div>
                         <div className="card-footer">
                             <button className="btn btn-primary" onClick={() => {
+                                {console.log("j'ai cliqué sur le bouton")}
                                 this.bookAddedWait(result.id)
                                 const bookInfo = result.volumeInfo
+                                {console.log("bookInfo" + bookInfo)}
                                 addBook(bookInfo.title, localStorage.getItem("email"), bookInfo["authors"]?bookInfo.authors[0]:"unknown",
                                     bookInfo["publishedDate"]?bookInfo.publishedDate:"unknown",
                                     bookInfo["categories"]?bookInfo.categories[0]:"unknown",
@@ -114,6 +116,7 @@ class Home extends Component {
         }, 3000)
     }
     bookAddedWait(titre) {
+        console.log("je set le state")
         this.setState({addBook : titre})
         setTimeout(() => {
             this.setState({addBook : ""})

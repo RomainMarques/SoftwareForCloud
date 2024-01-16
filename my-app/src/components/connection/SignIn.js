@@ -20,7 +20,7 @@ function SignIn(props) {
     }
     function handleSubmit(event) {
         event.preventDefault()
-        axios.post(`http://localhost:${process.env.REACT_APP_SERVER_PORT}/server/signin`,
+        axios.post(`http://localhost:3000/server/signin`,
             {firstname: event.target.elements.firstName.value,
                 lastname: event.target.elements.lastName.value,
                 email: event.target.elements.email.value,
