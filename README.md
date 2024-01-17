@@ -16,6 +16,7 @@ You need to have installed on your computer :
 - Minikube
 - Kubectl
 - istio (a service mesh) : https://istio.io/latest/docs/setup/getting-started/
+- Helm : https://helm.sh/docs/intro/install/
 
 ## Deployment
 
@@ -42,3 +43,12 @@ We also use istio for different reasons :
 - To create a gateway to access the different services.
 - To create a virtual service to redirect the traffic to the different services and using the same url as basis.
 - To solve Cors problems between the front end and the server.
+
+## Helm
+
+Run the following command to install istio on helm :
+
+```bash
+helm repo add istio https://istio-release.storage.googleapis.com/charts
+helm repo update
+```
