@@ -65,5 +65,5 @@ helm install cloud ./hel-cloud
 Finally to get the url of the front and do the port forwarding of istio, you can run the following command :
 
 ```bash
-bash launcher.sh
+bash ./launcher.sh
 ```
