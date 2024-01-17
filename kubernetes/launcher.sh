@@ -3,7 +3,7 @@
 # This script is used to launch the kubernetes cluster and the gateway
 
 # Start minikube
-#minikube start --memory=5000 --cpus=4
+minikube start --memory=5000 --cpus=4
 
 # Launch the different clusters and gateway
 kubectl apply -f ./gateway.yaml
