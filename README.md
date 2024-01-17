@@ -11,8 +11,6 @@ It is not working on Windows as the images are built on macOS.
 
 ## Installation
 
-### Prerequisites
-
 You need to have installed on your computer :
 - Docker
 - Minikube
