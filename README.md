@@ -46,7 +46,7 @@ We also use istio for different reasons :
 
 ## Helm
 
-We configured helm to automate the deployment of the clusters in istio.
+We configured helm to automate the deployment of the clusters. But first you have to download istio to the helm directory.
 Run the following command to install istio on helm :
 
 ```bash
@@ -59,7 +59,7 @@ Then you can run helm to install the different clusters (you have to be in the h
 if you executed the previous command you are already in the good place) :
 
 ```bash
-helm install cloud ./hel-cloud
+helm install cloud ./helm-cloud
 ```
 
 Finally to get the url of the front and do the port forwarding of istio, you can run the following command :
