@@ -62,8 +62,16 @@ if you executed the previous command you are already in the good place) :
 helm install cloud ./helm-cloud
 ```
 
-Finally to get the url of the front and do the port forwarding of istio, you can run the following command :
+Finally, to get the url of the front and do the port forwarding of istio, you can run the following command :
 
 ```bash
-bash ./launcher.sh
+bash ./../kubernetes/ingress-forward.sh &
+echo To access the website you can go on the following url :
+minikube service front --url
+```
+
+Another solution is to launch the `launcher.sh` script in the helm directory.
+```bash
+cd ./helm
+bash launcher.sh
 ```
